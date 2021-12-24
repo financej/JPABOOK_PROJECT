@@ -1,4 +1,6 @@
-package jpabook_project;
+package jpabook_project.model.entity.item;
+
+import jpabook_project.model.entity.Category;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="DTYPE")
-public class Item {
+public abstract class Item {
     @Id
     @GeneratedValue
     @Column(name="ITEM_ID")

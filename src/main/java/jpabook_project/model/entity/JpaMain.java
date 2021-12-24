@@ -1,4 +1,4 @@
-package jpabook_project;
+package jpabook_project.model.entity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,8 +15,7 @@ public class JpaMain {
     public static void main(String[] args) {
         Member member = createMember("장민준", "서울","관천로","111-1111", Arrays.asList("종서바보", "못함의 민준"));
         Order order = createOrder(member);
-        Category category = createCategory("카테고리",Arrays.asList("앨범","사진"));
-        Item item = createItem("롤",1000,10);
+//        Category category = createCategory("카테고리",Arrays.asList("앨범","사진"));
     }
     static Member createMember(String name, String city, String street, String zipcode, List jongseo){
         EntityManager em1 = emf.createEntityManager();
@@ -70,20 +69,4 @@ public class JpaMain {
         return category;
     }
 
-    static Item createItem(String name, int price, int quantity){
-        EntityManager em4 = emf.createEntityManager();
-        EntityTransaction tx4 = em4.getTransaction();
-        tx4.begin();
-
-        Item item = new Item();
-        item.setName(name);
-        item.setPrice(price);
-        item.setStockQuantity(quantity);
-
-        em4.persist(item);
-        tx4.commit();
-
-        em4.close();;
-        return item;
-    }
 }

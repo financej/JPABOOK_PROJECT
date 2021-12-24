@@ -1,4 +1,4 @@
-package jpabook_project;
+package jpabook_project.model.entity;
 
 import javax.persistence.*;
 

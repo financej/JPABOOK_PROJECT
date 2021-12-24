@@ -1,11 +1,11 @@
-package jpabook_project;
+package jpabook_project.model.entity.item;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("A")
-public class Album extends Item{
+public class Album extends Item {
     private String artist;
     private String etc;
 

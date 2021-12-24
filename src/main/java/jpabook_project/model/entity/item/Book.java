@@ -1,11 +1,11 @@
-package jpabook_project;
+package jpabook_project.model.entity.item;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("B")
-public class Book extends Item{
+public class Book extends Item {
     private String author;
     private String isbn;
 
